@@ -2,7 +2,9 @@
 
 ## 1. Set up your workspace
 
-Open an empty local folder in your coding tool and paste the prompt in the [README](README.md). The agent gets the files and walks you through the rest.
+**Use Codex or Claude Code, not standard chat or Cowork, and select “Work Locally.”** In Claude's desktop app, use the **Code** tab; the environment may be labeled **Local**.
+
+Open an empty folder in that local session and paste the prompt in the [README](README.md). The agent gets the files and walks you through the rest. Selecting a folder alone does not change a cloud session into a local one.
 
 If you are new to these tools, use the official [Codex quickstart](https://developers.openai.com/codex/quickstart) or [Claude Code Desktop guide](https://code.claude.com/docs/en/desktop).
 

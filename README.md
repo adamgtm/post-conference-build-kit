@@ -19,7 +19,7 @@ After each round, it tells you what it found, what it learned, and where it will
 
 ### What you need
 
-- **Codex or Claude Code**, running in a local folder with permission to read files and run scripts.
+- **Codex or Claude Code**, with **Work Locally** selected and permission to read files and run scripts. Use the **Code** tab in Claude's desktop app. Standard chat and Cowork are outside this kit's setup path.
 - **Apify** to collect new posts. Signup with [my partner link](https://apify.com/?fpr=adamgtm) and use **15GTM** for **15% off all plans**.
 - **An empty folder** for this project. Your agent will check Python and help with setup.
 - An event, a date range, and a little context about your business.
@@ -28,7 +28,9 @@ The example can be explored without an Apify token. Your coding tool's normal us
 
 ### Paste this into your agent
 
-Create a folder called `post-conference-project`, open it in Codex or Claude Code, and paste:
+**Use Codex or Claude Code, not standard chat or Cowork, and select “Work Locally.”** In Claude's desktop app, use the **Code** tab.
+
+Create a folder called `post-conference-project`, open it in your local session, and paste:
 
 ```text
 Get the Build Kit from https://github.com/adamgtm/post-conference-build-kit into this folder. Read its README and skills/collect-event-posts/SKILL.md. Help me set a collection goal and Apify budget, then start with a small pilot. Keep running the fan-out loop: judge each batch, use its discoveries to choose the next tactic, and continue within my approved scope until the goal or a documented stopping condition is reached. Walk me through setup in plain English, show progress after each round, then help me find an angle for my business.

@@ -11,6 +11,8 @@ Explain decisions in ordinary language and handle the files and commands yoursel
 
 ## Start
 
+Use Codex or Claude Code working locally. If the reader starts in standard chat, Cowork, or a cloud session, direct them to a new local session before live collection: choose Codex or Claude Code, select Work Locally (or Local), and open the project folder. In Claude Desktop, use the Code tab. Folder attachment alone does not establish local execution. Give this setup path before presenting network-administration or offline-demo alternatives.
+
 Read the reader's existing brief and output/STATUS.md if present. For a resumed collection, follow Resume below before starting any new jobs. Ask only for missing event/date context, business/audience context, collection goal, and spending authority. Use templates/business-brief.md as a guide. Do not require the reader to edit JSON or install a global skill.
 
 Check the local folder is writable and Python is 3.10+. Work locally. If the reader has not connected Apify, explain how to save APIFY_TOKEN in .env using .env.example. Check presence without printing the value. A normal browser-only chat cannot execute this kit.

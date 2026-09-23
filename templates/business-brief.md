@@ -9,9 +9,13 @@
 - What we sell or help people do:
 - What we can credibly teach, show, or give away:
 - What I want to learn:
+- Collection goal (a broad sample, a post target, or a specific research need):
+- Coverage priorities (whose voices, which days, languages, or topics):
 - A few real seed post links:
 - Relevant people or company pages:
 - Words that might cause false matches:
 - Maximum Apify Actor charges I approve:
 - Pilot allowance within that total:
+- Continue automatically after a useful pilot within that total, or pilot only:
+- Optional amount to reserve for a later recap pass:
 - Optional reference set collected independently:

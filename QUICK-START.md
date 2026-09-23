@@ -16,13 +16,19 @@ Tell the agent the event, dates, company, target customer, and what you want to 
 
 ## 2. Collect the Posts
 
+**Run the loop.** Your agent collects a batch, checks what it added, extracts new leads, and chooses the next batch. It repeats toward your goal within the approved budget. Read [How the fan-out loop works](FAN-OUT-LOOP.md) for a worked example.
+
+**Define enough.** Tell the agent what you need to learn and whose voices matter. You can set a post target, or ask it to build a broad sample until distinct routes show diminishing returns. It records the goal, coverage priorities, budget, and stopping conditions before collecting.
+
 **Start with good seeds.** Bring a few actual posts from the host, speakers, customers, partners, and people discussing the event. Include different points of view. Your agent can help find these. An event name, host, dates, and a few product or session names also give it useful search terms.
 
 **Set a limit.** A small pilot helps you learn whether the queries and sources are useful. For example, you could authorize a $2 pilot within a $10 total Actor-charge allowance. These are spending choices, not promises about dataset size. Your Apify plan, other platform charges, and coding-tool usage are separate. The agent shows actual charges and remaining reservations as it works.
 
-**Expand through the conversation.** Search the event name and its variants using both newest and relevance order. Pull the host's and relevant company pages' posts directly. Look at people who repeatedly post about the event, then the other event posts they react to. This last route found material our searches missed.
+**Use every round to plan the next.** Search results reveal company pages and active posters. Their posts and reactions reveal more authors and useful search terms. The agent keeps a queue of these leads, follows productive branches, and tests ways to fill gaps. Newly discovered people and pages can start another round of fan-out. This last route found material our searches missed.
 
-**Check what each pass adds.** Ask for new relevant posts, duplicates, and cost by route. A route returning mostly duplicates is a reason to try a different route. It does not prove that all posts have been found. Leave some budget for recap posts after the event.
+**Check what each pass adds.** The agent reports new relevant posts, duplicates, cost, and its next move after every round. Two weak searches are a reason to try a different route; they do not establish that collection is finished. If you want a later recap pass, reserve part of the budget and return after the event. This kit runs during your active agent session.
+
+**Keep your progress.** The folder holds the plan, the queue of leads, and a report for every round. To continue in a new session, say: “Resume the collection loop from output/STATUS.md. Keep the same goal and spending limit.”
 
 **Optional: measure sample recall.** Keep an independently collected set of known event posts aside until discovery finishes. The agent checks how many it recovered. Finding 32 of 40 is 80% recall against those 40, not 80% of LinkedIn. A Dreamforce reference set and the calculation helper are included. Seed posts cannot double as an independent coverage test.
 

@@ -4,6 +4,8 @@
 
 These are observations from Adam's September 2026 runs, not guarantees for every event.
 
+Use these as tactics inside the skill's adaptive loop. Their order below is not a fixed execution plan. Revisit a route with newly discovered targets when the previous results justify it; log what changed before spending again.
+
 1. **Seeds and targeted search.** Start with captured post URLs from a mix of host, speakers, partners, customers and independent voices. Build queries from event names, hashtags, product names and session language. Use newest and relevance order.
 2. **Host and company pages.** Pull relevant company pages directly. The conference pilots found posts search had missed. Include company pages that emerge as authors, not just the host.
 3. **Active non-host posters.** Identify people with repeated relevant posts. Their own posts and recent reactions are a useful next route. Inspect the nested post returned with each reaction.
@@ -42,6 +44,7 @@ From the kit root, after the reader approves the amount:
 
 ```sh
 python3 scripts/apify_collect.py init --project output --budget 10
+python3 scripts/review_round.py snapshot --project output --round 001
 python3 scripts/apify_collect.py start --project output --name search-date-01 --actor search --input output/jobs/search-date-01.json --cap 0.25
 python3 scripts/apify_collect.py fetch --project output --name search-date-01
 python3 scripts/apify_collect.py status --project output
@@ -49,6 +52,19 @@ python3 scripts/prepare_posts.py --project output --start 2026-09-08 --end 2026-
 ```
 
 The start command returns quickly. Fetch checks once; if still running, continue another task and fetch later. It paginates and saves partial datasets for failed/timed-out runs too. Paid POSTs are never retried automatically.
+
+After reading the full new post texts and recording relevance in output/decisions.csv:
+
+```sh
+python3 scripts/prepare_posts.py --project output --start 2026-09-08 --end 2026-09-25 --decisions output/decisions.csv
+python3 scripts/review_round.py review --project output --round 001 --jobs search-date-01
+```
+
+The round helper makes no network calls. `snapshot` saves all current candidates as output/rounds/001/before.csv; for the first empty collection it writes a header-only baseline. It refuses to overwrite a baseline or start another round before the previous one has metrics. Run it before starting that round's jobs. `review` writes metrics.json; supply every job in that round. It checks that earlier candidates remain and that the listed results have been prepared. Failed terminal runs retain useful partial additions but are marked incomplete, so their low yield cannot support saturation.
+
+Metrics distinguish newly discovered confirmed posts from older candidates newly labeled relevant. Duplicates include repeats from earlier rounds and within this batch. For overlapping jobs, a post's new-discovery credit goes to the first fetched observation, breaking ties by job name. These are marginal additions, not a causal comparison of Actors. Unknown charges keep their full cap reserved; cost efficiency stays unmeasured until all round charges are known.
+
+After review, update the round report, frontier.csv, coverage check, and STATUS.md. Pick the next batch from the discoveries and remaining gaps. Take round 002's baseline only after completing that review. The helper measures progress; the coding agent chooses and executes the next move.
 
 A same-name, same-input start returns the saved receipt. A changed input requires a new name and a new reservation. An uncertain start blocks further starts. Use the Apify console to find its actual run, then `adopt --project output --name NAME --run-id ID`; adoption verifies Actor, input and cap before attaching the ID.
 

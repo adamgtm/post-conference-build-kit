@@ -1,0 +1,15 @@
+{
+  "created": "2026-09-23",
+  "example_rows": 24,
+  "example_selection": "8 highest engagement + 16 pseudorandom (seed 23) from the already exported public share snapshot",
+  "example_source_sha256": "a27c269a17b38e61623233879861c404397b898e55e3c247dd9bafc6983ca664",
+  "example_source_rows": 2856,
+  "reference_rows": 40,
+  "reference_selection": "First 40 SHA256(post_url) order, lane 1 panel, relevance=event, in_window=true, judge_about_event=true",
+  "reference_source_sha256": "1c4de13a48cd621b4c2569461bcf56922ffa336e1ea567871df4d0ab741817c2",
+  "reference_window": [
+    "2026-09-08",
+    "2026-09-25"
+  ],
+  "reference_observation": "Panel is sampled from tracked authors; it is independent of a new reader collection, not a random LinkedIn population sample. Do not seed from these URLs. Not an independent test of the included example or the source corpus."
+}
